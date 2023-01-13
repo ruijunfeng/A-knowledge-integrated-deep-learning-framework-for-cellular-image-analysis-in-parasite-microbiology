@@ -1,0 +1,61 @@
+{
+    "system": {
+        "dataset": "MSCOCOExtreme",
+        "batch_size": 1,
+        "sampling_function": "kp_detection",
+
+        "train_split": "train",
+        "val_split": "val",
+
+        "learning_rate": 0.0025,
+        "decay_rate": 10,
+
+        "val_iter": false,
+
+        "opt_algo": "adam",
+        "prefetch_size": 1,
+
+        "max_iter": 100000,
+        "stepsize": 5000,
+        "snapshot_interval": 5,
+        "display": 5,
+
+        "chunk_sizes": [1],
+
+        "data_dir": "./dataset",
+
+        "pretrain": "./pretrained/ExtremeNet_10000.pkl"
+    },
+    
+    "db": {
+        "dataset": "Babesia",
+        
+        "rand_scale_min": 0.6,
+        "rand_scale_max": 1.4,
+        "rand_scale_step": 0.1,
+        "rand_scales": null,
+
+        "rand_crop": true,
+        "rand_color": true,
+
+        "border": 128,
+        "gaussian_bump": true,
+
+        "input_size": [511, 511],
+        "output_sizes": [[128, 128]],
+
+        "test_scales": [1],
+
+        "top_k": 40,
+        "categories": 1,
+        "aggr_weight": 0.1,
+        "scores_thresh": 0.01,
+        "center_thresh": 0.1,
+        "nms_threshold": 0.5,
+        "suppres_ghost": true,
+
+        "max_per_image": 150,
+        "cluster_radius": 500,
+        "confidence_threshold": 0.3
+    }
+}
