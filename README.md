@@ -12,12 +12,12 @@ To run the codes, the following dependencies are required:
 + [pytorch 1.2.0](https://pytorch.org/get-started/previous-versions/#v120)
 + [torchvision 0.4.0](https://pytorch.org/get-started/previous-versions/#v120)
 + [keras 2.2.4](https://keras.io)
-+ [keras-contrib 2.0.8]
-+ [h5py 2.10.0]
++ keras-contrib 2.0.8
++ h5py 2.10.0
 + [scikit-learn 1.0.2](https://scikit-learn.org/stable/install.html)
-+ [opencv-python 4.6.0.66]
-+ [pycocotools 2.0.5]
-+ [tqdm 4.64.1]
++ opencv-python 4.6.0.66
++ pycocotools 2.0.5
++ tqdm 4.64.1
 + [pandas 1.3.5](https://pandas.pydata.org/pandas-docs/stable/install.html)
 + [numpy 1.21.5](https://numpy.org/)
 + [matplotlib 3.5.3](https://matplotlib.org/)
