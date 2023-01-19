@@ -1,2 +1,2 @@
 # Human-expert-knowledge-integrated-deep-learning-for-microscopy-image-analysis
-Dataset is avaliable at https://www.scidb.cn/en/s/me22my
+This repository includes Python codes and datasets used in our npj Digital Medicine Protocol paper **[Human-expert-knowledge-integrated-deep-learning-for-microscopy-image-analysis]**. These codes are based on the previous publications of our group, including three different tasks of classfication (DCTL), detection (GFS-ExtremeNet), and reconstruction (COMI). All the codes are refactered for better readability. The corresponding datasets for these codes are avalible at https://www.scidb.cn/en/s/me22my.
