@@ -25,8 +25,8 @@ After installing the needed virtual environment, the next step is to set up the 
 ## File Structure
 To run this repository, it is important to keep an identical file structure for each template as follows, the pretrained models used in COMI are available at (https://drive.google.com/drive/folders/13R9fZ45IyPdJrq-ATHatPc_j_977qsT3?usp=sharing
 ):
-
-```DCTL          GFS-ExtremeNet    COMI
+```
+DCTL          GFS-ExtremeNet    COMI
 ├─checkpoints ├─checkpoints     ├─dataset
 ├─dataset     ├─config          │  └─BPAEC
 │  ├─X        ├─dataset         │      ├─actin
@@ -48,23 +48,3 @@ test.py       ├─sample
               test.py
 ```
 When running the codes, open the Spyder IDE (use Spyder 5.2.2 for best compatibility) under the installed virtual environment, switch the file directory to the needed one, open the "train.py" file, and click the run button. If all the settings are correct, the IPython console will keep scrolling up with the training information. The trained model weights will be saved under the "models" folder. To test the trained model, open the "test.py" and configure the settings.
-```bash
-├── app
-│   ├── css
-│   │   ├── **/*.css
-│   ├── favicon.ico
-│   ├── images
-│   ├── index.html
-│   ├── js
-│   │   ├── **/*.js
-│   └── partials/template
-├── dist (or build)
-├── node_modules
-├── bower_components (if using bower)
-├── test
-├── Gruntfile.js/gulpfile.js
-├── README.md
-├── package.json
-├── bower.json (if using bower)
-└── .gitignore
-```
