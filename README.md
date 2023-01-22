@@ -23,8 +23,7 @@ After installing the needed virtual environment, the next step is to set up the 
 + [matplotlib 3.5.3](https://matplotlib.org/)
 
 ## File Structure
-To run this repository, it is important to keep an identical file structure for each template as follows, the pretrained models used in COMI are available at (https://drive.google.com/drive/folders/13R9fZ45IyPdJrq-ATHatPc_j_977qsT3?usp=sharing
-):
+To run this repository, it is important to keep an identical file structure for each template as follows, the pretrained models used in COMI are available at (https://drive.google.com/drive/folders/13R9fZ45IyPdJrq-ATHatPc_j_977qsT3?usp=sharing):
 ```
 DCTL          GFS-ExtremeNet    COMI
 ├─checkpoints ├─checkpoints     ├─dataset
@@ -47,4 +46,6 @@ test.py       ├─sample
               train.py
               test.py
 ```
-When running the codes, open the Spyder IDE (use Spyder 5.2.2 for best compatibility) under the installed virtual environment, switch the file directory to the needed one, open the "train.py" file, and click the run button. If all the settings are correct, the IPython console will keep scrolling up with the training information. The trained model weights will be saved under the "models" folder. To test the trained model, open the "test.py" and configure the settings.
+
+## Code Running
+When running these codes, open the Spyder IDE (use Spyder 5.2.2 for best compatibility) under the installed virtual environment and switch the file directory to the needed one. Open the "train.py" file and click the run button. If all the settings are correct, the IPython console will keep scrolling up with the training information. The trained model weights will be saved under the "models" folder. To test the trained model, open the "test.py" and configure the settings.
