@@ -48,4 +48,6 @@ test.py       ├─sample
 ```
 
 ## Code Running
-When running these codes, open the Spyder IDE (use Spyder 5.2.2 for best compatibility) under the installed virtual environment and switch the file directory to the needed one. Open the "train.py" file and click the run button. If all the settings are correct, the IPython console will keep scrolling up with the training information. The trained model weights will be saved under the "models" folder. To test the trained model, open the "test.py" and configure the settings.
+When running these codes, open the Spyder IDE (use Spyder 5.2.2 for best compatibility) under the installed virtual environment and switch the file directory to the needed one. 
+Open the "train.py" file and click the run button. If all the settings are correct, the IPython console will keep scrolling up with the training information. The trained model weights will be saved under the "models" folder. 
+To test the trained model, open the "test.py" and configure the settings.
