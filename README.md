@@ -1,4 +1,4 @@
-# Integrating Human Expert Knowledge into DL-based Methods for Microscopy Image Analysis: A Step-by-Step Guide
+# Integrating human expert knowledge into DL-based methods for microscopy image analysis: a step-by-step guide
 This repository includes Python codes and datasets used in our paper "Human expert knowledge integrated deep learning for microscopy image analysis". A detailed description of how to use this repository is provided in our paper, for review purposes, the preview version of this paper is not available right now. These codes are based on the previous publications of our group, including three different tasks: classification ([DCTL](https://github.com/senli2018/DCTL)), detection ([GFS-ExtremeNet](https://github.com/jiangdat/GFS-ExtremeNet)), and reconstruction ([COMI](https://github.com/jiangdat/COMI)). All the codes have been refactored and abundant code comments for better readability, it is recommended to use this repository instead of the original one. The corresponding datasets for these codes are available at https://www.scidb.cn/anonymous/bWUyMm15.
 
 ## Dependencies
