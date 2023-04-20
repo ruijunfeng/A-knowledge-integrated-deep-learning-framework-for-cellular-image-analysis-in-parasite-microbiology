@@ -53,4 +53,4 @@ Open the "train.py" file and click the run button. If all the settings are corre
 To test the trained model, open the "test.py" and configure the settings.
 
 ## Contact Us
-If you have any problems in running this repository, do not hesitate to contact us with this email fengruijun@zufe.edu.cn.
+If you have any problems in running this repository, do not hesitate to contact us with this email fengruijuan558@gmail.com.
