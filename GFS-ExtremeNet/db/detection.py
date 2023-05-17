@@ -44,6 +44,7 @@ class DETECTION(BASE):
         self._configs["test_scales"]     = [1]
         
         self._configs["cluster_radius"]  = 500
+        self._configs["confidence_threshold"]  = 0.3
 
         self.update_config(db_config)
 

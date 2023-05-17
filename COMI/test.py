@@ -78,14 +78,13 @@ def SSIM(img1, img2):
     return compare_ssim(img1, img2, data_range=1, multichannel=True)
 
 if __name__ == '__main__':
-    # acgan + mnist dataset
     save_num = 500
     input_shape = (128, 128, 3)
     model_type = 'deblursrgan4'
     cell_type = 'actin'
     z_depth = 'Z005'
     prefix = 'results/%s_%s_%s' %(model_type, cell_type, z_depth)
-    weights_dir = 'results/deblursrgan4_actin_Z005_weights'
+    weights_dir = 'checkpoints/20221129-014343/deblursrgan4_actin_Z005_weights/iteration_240'
     batch_size = 1
     test(prefix=prefix,
          weights_dir=weights_dir,

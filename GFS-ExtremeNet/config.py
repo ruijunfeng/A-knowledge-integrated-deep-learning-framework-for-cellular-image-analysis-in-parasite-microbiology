@@ -41,6 +41,7 @@ class Config:
         # Rng
         self._configs["data_rng"] = np.random.RandomState(123)
         self._configs["nnet_rng"] = np.random.RandomState(317)
+        self._configs["confidence_threshold"] = 0.3
 
     @property
     def chunk_sizes(self):
@@ -164,7 +165,13 @@ class Config:
         if not os.path.exists(self._configs["cache_dir"]):
             os.makedirs(self._configs["cache_dir"])
         return self._configs["cache_dir"]
-
+    
+    @property
+    def confidence_threshold(self):
+        if not os.path.exists(self._configs["confidence_threshold"]):
+            os.makedirs(self._configs["confidence_threshold"])
+        return self._configs["confidence_threshold"]
+    
     def update_config(self, new):
         for key in new:
             if key in self._configs:

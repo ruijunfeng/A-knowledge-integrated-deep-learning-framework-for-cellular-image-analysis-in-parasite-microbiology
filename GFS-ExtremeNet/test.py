@@ -61,8 +61,8 @@ def test(db, split, weights_dir, debug=False, visualize=True):
     nnet.load_params(weights_dir)
     
     # testing data reading
-    test_file = "testing.{}".format(db.data) # import testing.coco_extreme
-    testing = importlib.import_module(test_file).testing # import testing.coco_extreme.testing
+    test_file = "testing.{}".format(db.data) # equal to import testing.coco_extreme
+    testing = importlib.import_module(test_file).testing # equal to import testing.coco_extreme.testing
     
     # model eval
     nnet.cuda()
@@ -71,7 +71,11 @@ def test(db, split, weights_dir, debug=False, visualize=True):
 
 if __name__ == "__main__":
     args = parse_args()
-
+    args.weights_dir = "checkpoints/20221127-165855/GFS-ExtremeNet_best.pkl"
+    args.split = "validation"
+    args.debug = False
+    args.visualize = True
+    
     cfg_file = os.path.join(system_configs.config_dir, args.cfg_file + ".json")
     print("read cfg_file: {}".format(cfg_file))
     with open(cfg_file, "r") as f:
@@ -98,6 +102,4 @@ if __name__ == "__main__":
     print("db config...")
     pprint.pprint(testing_db.configs)
     
-    args.weights_dir = "checkpoints/20221127-1705/GFS-ExtremeNet_best.pkl"
-    args.split = "testing"
     test(db=testing_db, split=args.split, weights_dir=args.weights_dir, debug=args.debug, visualize=args.visualize)

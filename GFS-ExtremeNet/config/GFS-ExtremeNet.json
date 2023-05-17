@@ -6,11 +6,12 @@
 
         "train_split": "train",
         "val_split": "val",
+        "test_split": "testdev",
 
         "learning_rate": 0.0025,
         "decay_rate": 10,
 
-        "val_iter": false,
+        "val_iter": 100,
 
         "opt_algo": "adam",
         "prefetch_size": 1,
@@ -39,7 +40,7 @@
         "rand_color": true,
 
         "border": 128,
-        "gaussian_bump": true,
+        "gaussian_bump": false,
 
         "input_size": [511, 511],
         "output_sizes": [[128, 128]],

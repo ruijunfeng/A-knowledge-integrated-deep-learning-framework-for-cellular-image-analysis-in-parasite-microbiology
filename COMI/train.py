@@ -333,7 +333,7 @@ class StarGAN(object):
             
     def train(self, prefix, max_iter, batch_size, 
               snapshot_interval, display_interval, 
-              cell_type=None, z_depth=None):
+              cell_type=None, z_depth=None, ratio=0.8):
         # Init directories
         start_time = datetime.now()
         weigths_dir = prefix + '_weights'
@@ -358,7 +358,8 @@ class StarGAN(object):
             hrlq_train, hrlq_test, lrlq_train, lrlq_test = load_confocal(
                 input_shape=self.input_shape,
                 cell_type=cell_type, 
-                z_depth=z_depth)
+                z_depth=z_depth,
+                ratio=ratio)
                     
         # Training
         for iteration in range(max_iter):
@@ -489,10 +490,11 @@ class StarGAN(object):
 
 if __name__ == '__main__':
     # settings
-    input_shape = (80, 80, 3)
+    input_shape = (128, 128, 3)
     learning_rate = 1e-4
     batch_size = 1
-    max_iter = 250
+    max_iter = 25000
+    ratio = 0.8
     snapshot_interval = 20
     display_interval = 10
     model_type = 'deblursrgan4'
@@ -509,4 +511,5 @@ if __name__ == '__main__':
                 snapshot_interval=snapshot_interval, 
                 display_interval=display_interval,
                 cell_type=cell_type,
-                z_depth=z_depth)
+                z_depth=z_depth,
+                ratio=ratio)

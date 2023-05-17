@@ -86,7 +86,7 @@ def kp_detection(db, nnet, result_dir, debug=False, decode_func=kp_decode, visua
     gaussian_rad  = db.configs["gaussian_radius"]
 
     cluster_radius = db.configs["cluster_radius"]
-    confidence_threshold  = db.configs["confidence_threshold"]
+    confidence_threshold = db.configs["confidence_threshold"]
 
     nms_algorithm = {
         "nms": 0,
@@ -158,8 +158,8 @@ def kp_detection(db, nnet, result_dir, debug=False, decode_func=kp_decode, visua
             # rescale the detection results into the input size
             _rescale_dets(dets, ratios, borders, sizes)
             _rescale_ex_pts(dets, ratios, borders, sizes)
-            dets[:, :, 0:4] /= scale
-            dets[:, :, 5:13] /= scale
+            dets[:, :, 0:4] /= scale # bounding boxes (dets[4] is confidence score)
+            dets[:, :, 5:13] /= scale # extreme points
             detections.append(dets)
 
         detections = np.concatenate(detections, axis=1)
@@ -288,14 +288,14 @@ def kp_detection(db, nnet, result_dir, debug=False, decode_func=kp_decode, visua
                 # process each bounding box
                 for bbox in top_bboxes[image_id][j][keep_inds]:
                     # decompose the results
-                    category = categories[j]
+                    category = j - 1
                     extreme_pt = bbox[5:13].astype(np.int32).reshape(4, 2)
                     
                     # decompose extreme points
-                    xt, yt = extreme_pt[0, 0], extreme_pt[0, 1]
-                    xl, yl = extreme_pt[1, 0], extreme_pt[1, 1]
-                    xb, yb = extreme_pt[2, 0], extreme_pt[2, 1]
-                    xr, yr = extreme_pt[3, 0], extreme_pt[3, 1]
+                    xl, yl = extreme_pt[0, 0], extreme_pt[0, 1]
+                    xt, yt = extreme_pt[1, 0], extreme_pt[1, 1]
+                    xr, yr = extreme_pt[2, 0], extreme_pt[2, 1]
+                    xb, yb = extreme_pt[3, 0], extreme_pt[3, 1]
                     xct    = (xl + xr) / 2
                     yct    = (yt + yb) / 2
                     
@@ -311,11 +311,11 @@ def kp_detection(db, nnet, result_dir, debug=False, decode_func=kp_decode, visua
                             radius = max(0, int(radius))
                         else:
                             radius = gaussian_rad
-                        draw_gaussian(t_heatmaps[category], [xt, yt], radius)
-                        draw_gaussian(l_heatmaps[category], [xl, yl], radius)
-                        draw_gaussian(b_heatmaps[category], [xb, yb], radius)
-                        draw_gaussian(r_heatmaps[category], [xr, yr], radius)
-                        draw_gaussian(ct_heatmaps[category], [xct, yct], radius)
+                        draw_gaussian(t_heatmaps[category,...], [xt, yt], radius)
+                        draw_gaussian(l_heatmaps[category,...], [xl, yl], radius)
+                        draw_gaussian(b_heatmaps[category,...], [xb, yb], radius)
+                        draw_gaussian(r_heatmaps[category,...], [xr, yr], radius)
+                        draw_gaussian(ct_heatmaps[category,...], [xct, yct], radius)
                     # directly use the extreme points as the heatmaps
                     else:
                         t_heatmaps[category, yt, xt] = 1

@@ -8,7 +8,7 @@ import os
 import cv2
 import numpy as np
 
-def load_confocal(input_shape=None, cell_type=None, z_depth=None):
+def load_confocal(input_shape=None, cell_type=None, z_depth=None, ratio=0.8):
     dir = 'dataset/BPAEC/' + cell_type
 
     # training dataset 80%
@@ -20,7 +20,7 @@ def load_confocal(input_shape=None, cell_type=None, z_depth=None):
     # reading images
     for _, _, files in os.walk(dir+'/'+z_depth):
         for file in files:
-            if int(file.split('_')[-1].split('.')[0]) < len(files) * 0.8:
+            if int(file.split('_')[-1].split('.')[0]) < len(files) * ratio:
                 # training set reading
                 img_lq = cv2.imread(dir+'/'+z_depth + '/' + file)
                 img = cv2.resize(img_lq, (input_shape[0], input_shape[1]))
@@ -44,7 +44,7 @@ def load_confocal(input_shape=None, cell_type=None, z_depth=None):
     # reading images
     for _, _, files in os.walk(dir+'/'+z_depth):
         for file in files:
-            if int(file.split('_')[-1].split('.')[0]) >= len(files) * 0.8:
+            if int(file.split('_')[-1].split('.')[0]) >= len(files) * ratio:
                 # test set reading
                 img_lq = cv2.imread(dir+'/'+z_depth + '/' + file)
                 img = cv2.resize(img_lq, (input_shape[0], input_shape[1]))

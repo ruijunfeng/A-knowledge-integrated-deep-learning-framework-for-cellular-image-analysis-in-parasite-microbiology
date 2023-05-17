@@ -39,7 +39,7 @@ def parse_args():
                         default=4, 
                         type=int)
     parser.add_argument("--debug", 
-                        default=True, 
+                        default=False, 
                         help="whethter to visualize the ground truths during training",
                         action="store_true")
 
@@ -116,8 +116,8 @@ def train(training_dbs, validation_db, start_iter=0, debug=False):
     pinned_validation_queue = queue.Queue(5)
     
     # import function
-    data_file   = "sample.{}".format(training_dbs[0].data) # sample.coco_extreme
-    sample_data = importlib.import_module(data_file).sample_data # sample.coco_extreme.sample_data
+    data_file   = "sample.{}".format(training_dbs[0].data) # equal to sample.coco_extreme
+    sample_data = importlib.import_module(data_file).sample_data # equal to sample.coco_extreme.sample_data
     
     # training data
     training_tasks = init_parallel_jobs(dbs=training_dbs, 
@@ -237,6 +237,8 @@ def train(training_dbs, validation_db, start_iter=0, debug=False):
 
 if __name__ == "__main__":
     args = parse_args()
+    args.debug = False
+    
     # read cfg file
     cfg_file = os.path.join(system_configs.config_dir, args.cfg_file + ".json")
     with open(cfg_file, "r") as f:
