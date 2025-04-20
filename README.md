@@ -1,16 +1,41 @@
 # A knowledge-integrated deep learning framework for cellular image analysis in parasite microbiology: specialized for parasite classification, detection, and out-of-focus reconstruction
 
-This repository includes Python codes and datasets used in our paper. A detailed description of how to use this repository is provided in our paper, for review purposes, the preview version of this paper is not available right now. These codes are based on the previous publications of our group, including three different tasks: classification ([DCTL](https://github.com/senli2018/DCTL)), detection ([GFS-ExtremeNet](https://github.com/jiangdat/GFS-ExtremeNet)), and reconstruction ([COMI](https://github.com/jiangdat/COMI)). All the codes have been refactored and abundant code comments for better readability, it is recommended to use this repository instead of the original one. The corresponding datasets for these codes are available at https://www.scidb.cn/anonymous/bWUyMm15.
+This repository includes code and datasets for a knowledge-integrated deep learning framework for cellular image analysis in parasite microbiology. A detailed description of how to run this repository is provided at this protocol paper: <https://doi.org/10.1016/j.xpro.2023.102452>.
+
+The code is based on previous publications from our group and includes three different tasks: classification ([DCTL](https://github.com/senli2018/DCTL)), detection ([GFS-ExtremeNet](https://github.com/jiangdat/GFS-ExtremeNet)), and reconstruction ([COMI](https://github.com/jiangdat/COMI)).
+
+All the code has been refactored and includes detailed comments for improved readability. We recommend using this repository instead of the original ones. The corresponding datasets are available at <https://www.scidb.cn/anonymous/bWUyMm15>.
 
 ## Dependencies
 
-To run the codes, install the [Anaconda](https://repo.anaconda.com/archive/Anaconda3-2022.10-Windows-x86_64.exe) and create the virtual environment using the following command, if you are using a GPU then use the command 1 to create a GPU-compatible virtual environment, otherwise, use command 2:
-1. conda create -n microscopy_image_analysis cudatoolkit=10.0.130 cudnn=7.6.5 python=3.7.16
-2. conda create -n microscopy_image_analysis python=3.7.16
+The following tutorial is tested on Windows platform, for Linux platform, you need to download a differernt Anaconda. To run the codes, install the [Anaconda](https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Windows-x86_64.exe) and create a virtual environment using the following command. If you are using a GPU, use the following command instead to create a GPU-compatible virtual environment:
 
-After installing the needed virtual environment, the next step is to set up the package dependencies. Simply open the command prompt under the previously installed virtual environment and use the "pip install packagename==version" to install the needed package. For example, if you want to install pandas with a version of 1.3.5, you should use this command: "pip install pandas==1.3.5". For pytorch and torchvision, it is recommended to use the command provided by the official website. The following are the needed packages:
-+ [Python](https://www.python.org/downloads/) 3.7.16 or below
-+ [tensorflow 1.15.0](https://www.tensorflow.org/install/) 
+```bash
+conda create -n microscopy_image_analysis cudatoolkit=10.0.130 cudnn=7.6.5 python=3.7.16
+```
+
+Otherwise, use this command to create a regular virtual enviroment:
+
+```bash
+conda create -n microscopy_image_analysis python=3.7.16
+```
+
+After setting up the required virtual environment, the next step is to install the necessary package dependencies. Open the command prompt within the activated virtual environment and use the command below to install each package:
+
+```bash
+pip install packagename==version
+```
+
+For example, to install pandas version 1.3.5, you would use:
+
+```bash
+pip install pandas==1.3.5
+```
+
+For installing pytorch and torchvision, it is recommended to use the command provided by the official website. The following are the needed packages:
+
++ [python](https://www.python.org/downloads/) 3.7.16 or below
++ [tensorflow 1.15.0](https://www.tensorflow.org/install/)
 + [pytorch 1.2.0](https://pytorch.org/get-started/previous-versions/#v120)
 + [torchvision 0.4.0](https://pytorch.org/get-started/previous-versions/#v120)
 + [keras 2.2.4](https://keras.io)
@@ -25,9 +50,22 @@ After installing the needed virtual environment, the next step is to set up the 
 + [numpy 1.21.5](https://numpy.org/)
 + [matplotlib 3.5.3](https://matplotlib.org/)
 
+We have also provided a .txt file for quick setup. If you don't have a GPU, simply run:
+
+```bash
+pip install -r packages_cpu.txt
+```
+
+If you have a compatible GPU, use the following instead:
+
+```bash
+pip install -r packages_gpu.txt
+```
+
 ## File Structure
 
-To run this repository, it is important to keep an identical file structure for each template as follows, the pretrained models used in COMI are available at (https://drive.google.com/drive/folders/13R9fZ45IyPdJrq-ATHatPc_j_977qsT3?usp=sharing):
+To run this repository, it is important to maintain an identical file structure for each project, as shown below:
+
 ```
 DCTL          GFS-ExtremeNet    COMI
 ├─checkpoints ├─checkpoints     ├─dataset
@@ -51,15 +89,21 @@ test.py       ├─sample
               test.py
 ```
 
+The pretrained models used in COMI are available at: <https://drive.google.com/drive/folders/13R9fZ45IyPdJrq-ATHatPc_j_977qsT3?usp=sharing>.
+
 ## Code Running
 
-When running these codes, open the Spyder IDE (use Spyder 5.3.3 for best compatibility) under the installed virtual environment and switch the file directory to the needed one. 
-Open the "train.py" file and click the run button. If all the settings are correct, the IPython console will keep scrolling up with the training information. The trained model weights will be saved under the "models" folder. 
-To test the trained model, open the "test.py" and configure the settings.
+If you are running this code on a Windows platform, you can open Anaconda Navigator and install the Spyder IDE (use Spyder 5.3.3 for best compatibility) within the virtual environment named ``microscopy_image_analysis``.
+
+Switch to the appropriate file directory, open the ``train.py`` file, and click the Run button. If all settings are correct, the IPython console will continuously scroll with training information. The trained model weights will be saved in the ``models\`` folder.
+
+To test the trained model, open ``test.py`` and configure the necessary settings.
+
+If you are using Linux, you can use VSCode, switch to the virtual environment in the terminal, and perform the same operations.
 
 ## Contact Us
 
-If you have any problems in running this repository, do not hesitate to contact us with this email fengruijuan558@gmail.com.
+If you have any problems running this repository, do not hesitate to contact us at this email address <fengruijuan558@gmail.com>.
 
 ## Citation
 
@@ -80,3 +124,4 @@ If you find this work useful, please cite our paper:
  keywords = {Bioinformatics, Computer sciences, Microscopy},
  abstract = {Cellular image analysis is an important method for microbiologists to identify and study microbes. Here, we present a knowledge-integrated deep learning framework for cellular image analysis, using three tasks as examples: classification, detection, and reconstruction. Alongside thorough descriptions of different models and datasets, we describe steps for computing environment setup, knowledge representation, data pre-processing, and training and tuning. We then detail evaluation and visualization. For complete details on the use and execution of this protocol, please refer to Li et al. (2021),1 Jiang et al. (2020),2 and Zhang et al. (2022).3}
 }
+```
