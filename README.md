@@ -1,7 +1,9 @@
-# A knowledge-integrated deep learning framework for cellular image analysis in microbiology: specialized for parasite classification, detection, and out-of-focus reconstruction
+# A knowledge-integrated deep learning framework for cellular image analysis in parasite microbiology: specialized for parasite classification, detection, and out-of-focus reconstruction
+
 This repository includes Python codes and datasets used in our paper. A detailed description of how to use this repository is provided in our paper, for review purposes, the preview version of this paper is not available right now. These codes are based on the previous publications of our group, including three different tasks: classification ([DCTL](https://github.com/senli2018/DCTL)), detection ([GFS-ExtremeNet](https://github.com/jiangdat/GFS-ExtremeNet)), and reconstruction ([COMI](https://github.com/jiangdat/COMI)). All the codes have been refactored and abundant code comments for better readability, it is recommended to use this repository instead of the original one. The corresponding datasets for these codes are available at https://www.scidb.cn/anonymous/bWUyMm15.
 
 ## Dependencies
+
 To run the codes, install the [Anaconda](https://repo.anaconda.com/archive/Anaconda3-2022.10-Windows-x86_64.exe) and create the virtual environment using the following command, if you are using a GPU then use the command 1 to create a GPU-compatible virtual environment, otherwise, use command 2:
 1. conda create -n microscopy_image_analysis cudatoolkit=10.0.130 cudnn=7.6.5 python=3.7.16
 2. conda create -n microscopy_image_analysis python=3.7.16
@@ -24,6 +26,7 @@ After installing the needed virtual environment, the next step is to set up the 
 + [matplotlib 3.5.3](https://matplotlib.org/)
 
 ## File Structure
+
 To run this repository, it is important to keep an identical file structure for each template as follows, the pretrained models used in COMI are available at (https://drive.google.com/drive/folders/13R9fZ45IyPdJrq-ATHatPc_j_977qsT3?usp=sharing):
 ```
 DCTL          GFS-ExtremeNet    COMI
@@ -49,9 +52,31 @@ test.py       ├─sample
 ```
 
 ## Code Running
+
 When running these codes, open the Spyder IDE (use Spyder 5.3.3 for best compatibility) under the installed virtual environment and switch the file directory to the needed one. 
 Open the "train.py" file and click the run button. If all the settings are correct, the IPython console will keep scrolling up with the training information. The trained model weights will be saved under the "models" folder. 
 To test the trained model, open the "test.py" and configure the settings.
 
 ## Contact Us
+
 If you have any problems in running this repository, do not hesitate to contact us with this email fengruijuan558@gmail.com.
+
+## Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@article{feng2023knowledge,
+ title = {A knowledge-integrated deep learning framework for cellular image analysis in parasite microbiology},
+ journal = {STAR Protocols},
+ volume = {4},
+ number = {3},
+ pages = {102452},
+ year = {2023},
+ issn = {2666-1667},
+ doi = {https://doi.org/10.1016/j.xpro.2023.102452},
+ url = {https://www.sciencedirect.com/science/article/pii/S2666166723004197},
+ author = {Ruijun Feng and Sen Li and Yang Zhang},
+ keywords = {Bioinformatics, Computer sciences, Microscopy},
+ abstract = {Cellular image analysis is an important method for microbiologists to identify and study microbes. Here, we present a knowledge-integrated deep learning framework for cellular image analysis, using three tasks as examples: classification, detection, and reconstruction. Alongside thorough descriptions of different models and datasets, we describe steps for computing environment setup, knowledge representation, data pre-processing, and training and tuning. We then detail evaluation and visualization. For complete details on the use and execution of this protocol, please refer to Li et al. (2021),1 Jiang et al. (2020),2 and Zhang et al. (2022).3}
+}
