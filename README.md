@@ -1,6 +1,6 @@
 # A knowledge-integrated deep learning framework for cellular image analysis in parasite microbiology: specialized for parasite classification, detection, and out-of-focus reconstruction
 
-This repository includes code and datasets for a knowledge-integrated deep learning framework for cellular image analysis in parasite microbiology. A detailed description of how to run this repository is provided at this protocol paper: <https://doi.org/10.1016/j.xpro.2023.102452>.
+This repository includes code and datasets for a knowledge-integrated deep learning framework for cellular image analysis in parasite microbiology. A detailed description of how to use this repository is provided in the protocol paper published in [STAR Protocols](https://doi.org/10.1016/j.xpro.2023.102452). If you're interested in this research direction, check out the review paper published in [Trends in Parasitology](https://doi.org/10.1016/j.pt.2024.05.005).
 
 The code is based on previous publications from our group and includes three different tasks: classification ([DCTL](https://github.com/senli2018/DCTL)), detection ([GFS-ExtremeNet](https://github.com/jiangdat/GFS-ExtremeNet)), and reconstruction ([COMI](https://github.com/jiangdat/COMI)).
 
@@ -110,7 +110,24 @@ If you have any problems running this repository, do not hesitate to contact us 
 If you find this work useful, please cite our paper:
 
 ```bibtex
-@article{feng2023knowledge,
+@article{feng2024microscopyparasitology,
+ title = {AI-powered microscopy image analysis for parasitology: integrating human expertise},
+ journal = {Trends in Parasitology},
+ volume = {40},
+ number = {7},
+ pages = {633-646},
+ year = {2024},
+ issn = {1471-4922},
+ doi = {https://doi.org/10.1016/j.pt.2024.05.005},
+ url = {https://www.sciencedirect.com/science/article/pii/S147149222400134X},
+ author = {Ruijun Feng and Sen Li and Yang Zhang},
+ keywords = {artificial intelligence, deep learning, microscopy image analysis, human expert knowledge, knowledge representation, knowledge integration},
+ abstract = {Microscopy image analysis plays a pivotal role in parasitology research. Deep learning (DL), a subset of artificial intelligence (AI), has garnered significant attention. However, traditional DL-based methods for general purposes are data-driven, often lacking explainability due to their black-box nature and sparse instructional resources. To address these challenges, this article presents a comprehensive review of recent advancements in knowledge-integrated DL models tailored for microscopy image analysis in parasitology. The massive amounts of human expert knowledge from parasitologists can enhance the accuracy and explainability of AI-driven decisions. It is expected that the adoption of knowledge-integrated DL models will open up a wide range of applications in the field of parasitology.}
+}
+```
+
+```bibtex
+@article{feng2023knowledgeintegration,
  title = {A knowledge-integrated deep learning framework for cellular image analysis in parasite microbiology},
  journal = {STAR Protocols},
  volume = {4},
